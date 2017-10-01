@@ -11,15 +11,15 @@ module.exports = {
   },
   build: {
     html: './',
-    stylesheets: 'www/dist/stylesheet/',
+    stylesheets: 'dist/stylesheet/',
     javascripts: {
-      path: 'www/dist/javascript/',
+      path: 'dist/javascript/',
     }
   },
   browsers: [
     '> 1%',
     'last 2 versions',
-    'iOS 8',
+    'iOS 10',
     'Firefox ESR',
     'Opera 12.1'
   ]

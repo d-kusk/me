@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
-@import "foundation/*";
+@import "/node_modules/sanitize.css/sanitize.css";
+@import "foundation/_variables";
+@import "foundation/_font";
+@import "foundation/_base";
 
-.hoge {
-  width: 100%;
-}
+@import "object/components/*";
+@import "object/project/*";

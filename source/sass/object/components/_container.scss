@@ -1,0 +1,10 @@
+.c-container {
+  max-width: $document-width;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--small {
+    max-width: $document-width--small;
+  }
+}

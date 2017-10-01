@@ -1,0 +1,25 @@
+.c-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+
+  &__fig {
+    width: 26%;
+  }
+
+  &__contents {
+    width: 64%;
+    margin-left: 10%;
+  }
+
+  &__contents__header {
+    .c-ttl--sub {
+      margin-top: 8px;
+    }
+  }
+
+  &__contents__body {
+    margin-top: 20px;
+  }
+}
