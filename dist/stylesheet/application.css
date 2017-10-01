@@ -38,8 +38,27 @@ main {
   width: 100%;
   margin-left: auto;
   margin-right: auto; }
+  @media screen and (max-width: 768px) {
+    .c-container {
+      max-width: 768px;
+      padding-left: 40px;
+      padding-right: 40px; } }
+  @media screen and (max-width: 400px) {
+    .c-container {
+      max-width: 375px;
+      padding-left: 20px;
+      padding-right: 20px; } }
   .c-container--small {
     max-width: 768px; }
+    @media screen and (max-width: 768px) {
+      .c-container--small {
+        max-width: 94.27083%;
+        padding-left: 5.20833%;
+        padding-right: 5.20833%; } }
+    @media screen and (max-width: 400px) {
+      .c-container--small {
+        padding-left: 4%;
+        padding-right: 4%; } }
 
 .c-global-footer {
   width: 100%;
@@ -64,11 +83,33 @@ main {
   -webkit-box-align: top;
   -ms-flex-align: top;
   align-items: top; }
+  @media screen and (max-width: 400px) {
+    .c-info {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
   .c-info__fig {
     width: 26%; }
+    @media screen and (max-width: 768px) {
+      .c-info__fig {
+        width: 30%; } }
+    @media screen and (max-width: 400px) {
+      .c-info__fig {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto; } }
   .c-info__contents {
     width: 64%;
     margin-left: 10%; }
+    @media screen and (max-width: 768px) {
+      .c-info__contents {
+        margin-left: 6%; } }
+    @media screen and (max-width: 400px) {
+      .c-info__contents {
+        width: 100%;
+        margin-top: 10%;
+        margin-left: auto; } }
   .c-info__contents__header .c-ttl--sub {
     margin-top: 8px; }
   .c-info__contents__body {
@@ -88,9 +129,15 @@ main {
       display: inline-block; }
       .c-links__list__item + .c-links__list__item {
         margin-left: 2%; }
+        @media screen and (max-width: 400px) {
+          .c-links__list__item + .c-links__list__item {
+            margin-left: 6%; } }
       .c-links__list__item a {
         font-size: 1.2rem;
         color: #2e2e2e; }
+        @media screen and (max-width: 400px) {
+          .c-links__list__item a {
+            font-size: 1.8rem; } }
 
 .c-main {
   display: -webkit-box;
@@ -108,6 +155,11 @@ main {
   align-items: center;
   width: 100%;
   height: 93%; }
+  @media screen and (max-width: 400px) {
+    .c-main {
+      display: block;
+      height: auto;
+      margin-top: 10%; } }
 
 .c-ttl {
   margin: 0;

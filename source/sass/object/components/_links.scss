@@ -11,11 +11,19 @@
 
       & + & {
         margin-left: 2%;
+
+        @include mq(sm) {
+          margin-left: 6%;
+        }
       }
 
       a {
         font-size: 1.2rem;
         color: $color-font-base;
+
+        @include mq(sm) {
+          font-size: 1.8rem;
+        }
       }
     }
   }
