@@ -1,0 +1,19 @@
+// Color
+$color-primary: #29abe2;
+$color-secondary: blue;
+
+$color-font-base: #2e2e2e;
+$color-font-grey: lighten(#2e2e2e, 30%);
+
+// Window Size
+$document-width: 1024px;
+$document-width--medium: 896px;
+$document-width--small: 768px;
+
+
+// Break Point
+$breakpoints: (
+  'sm': 'screen and (max-width: 400px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+) !default;

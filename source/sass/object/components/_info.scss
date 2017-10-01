@@ -1,0 +1,49 @@
+.c-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+
+  @include mq(sm) {
+    flex-direction: column;
+  }
+
+  &__fig {
+    width: 26%;
+
+    @include mq(md) {
+      width: 30%;
+    }
+
+    @include mq(sm) {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__contents {
+    width: 64%;
+    margin-left: 10%;
+
+    @include mq(md) {
+      margin-left: 6%;
+    }
+
+    @include mq(sm) {
+      width: 100%;
+      margin-top: 10%;
+      margin-left: auto;
+    }
+  }
+
+  &__contents__header {
+    .c-ttl--sub {
+      margin-top: 8px;
+    }
+  }
+
+  &__contents__body {
+    margin-top: 20px;
+  }
+}

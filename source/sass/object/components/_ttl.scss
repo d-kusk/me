@@ -1,0 +1,18 @@
+.c-ttl {
+  margin: 0;
+  font-size: 24px;
+  color: $color-font-base;
+
+  &--sub {
+    font-size: 16px;
+    color: $color-font-grey;
+  }
+
+  &--jp {
+    @include font-jp;
+  }
+
+  &--en {
+    @include font-en;
+  }
+}
