@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-@import "/node_modules/sanitize.css/sanitize.css";
+@import "vender/sanitaize/sanitize";
+
 @import "foundation/_variables";
 @import "foundation/_font";
 @import "foundation/_base";
