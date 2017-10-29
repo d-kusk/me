@@ -10,16 +10,16 @@ module.exports = {
     }
   },
   build: {
-    html: './',
-    stylesheets: 'dist/stylesheet/',
+    html: 'www/',
+    stylesheets: 'www/dist/stylesheet/',
     javascripts: {
-      path: 'dist/javascript/',
+      path: 'www/dist/javascript/',
     }
   },
   browsers: [
     '> 1%',
     'last 2 versions',
-    'iOS 10',
+    'iOS 8',
     'Firefox ESR',
     'Opera 12.1'
   ]
