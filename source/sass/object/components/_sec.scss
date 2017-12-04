@@ -1,0 +1,8 @@
+.c-sec {
+  & + & {
+    margin-top: $base-margin;
+  }
+  .c-lead + .c-lead {
+    margin-top: 0.8em;
+  }
+}

@@ -1,0 +1,15 @@
+.l-global-footer {
+  width: 100%;
+  background-color: $color-primary;
+  margin-top: $base-margin * 2;
+  padding: 1em 0 4em;
+
+  @include mq('sm') {
+    margin-top: $base-margin / 1.4;
+  }
+
+  .c-copy {
+    text-align: center;
+    color: #e7e7e7;
+  }
+}

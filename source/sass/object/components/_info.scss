@@ -9,11 +9,7 @@
   }
 
   &__fig {
-    width: 26%;
-
-    @include mq(md) {
-      width: 30%;
-    }
+    width: percentage(300px / $document-width--small);
 
     @include mq(sm) {
       width: 80%;
@@ -23,12 +19,8 @@
   }
 
   &__contents {
-    width: 64%;
-    margin-left: 10%;
-
-    @include mq(md) {
-      margin-left: 6%;
-    }
+    width: percentage(428px / $document-width--small);
+    margin-left: percentage(40px / $document-width--small);
 
     @include mq(sm) {
       width: 100%;
@@ -38,12 +30,16 @@
   }
 
   &__contents__header {
+    .c-ttl {
+      line-height: 1;
+    }
+
     .c-ttl--sub {
-      margin-top: 8px;
+      margin-top: 0.6em;
     }
   }
 
   &__contents__body {
-    margin-top: 20px;
+    margin-top: $base-margin - 10px;
   }
 }
