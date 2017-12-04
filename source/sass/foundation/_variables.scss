@@ -1,6 +1,5 @@
 // Color
-$color-primary: #29abe2;
-$color-secondary: blue;
+$color-primary: #2e2e2e;  // #29abe2;
 
 $color-font-base: #2e2e2e;
 $color-font-grey: lighten(#2e2e2e, 30%);
@@ -10,6 +9,7 @@ $document-width: 1024px;
 $document-width--medium: 896px;
 $document-width--small: 768px;
 
+$base-margin: 30px;
 
 // Break Point
 $breakpoints: (
@@ -17,3 +17,6 @@ $breakpoints: (
   'md': 'screen and (max-width: 768px)',
   'lg': 'screen and (max-width: 1000px)',
 ) !default;
+
+// Easing
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);

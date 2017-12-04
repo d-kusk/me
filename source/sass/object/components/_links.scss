@@ -1,6 +1,4 @@
 .c-links {
-  margin-top: 20px;
-
   &__list {
     text-align: left;
     padding: 0;
@@ -10,19 +8,26 @@
       display: inline-block;
 
       & + & {
-        margin-left: 2%;
+        margin-left: percentage(16px / 428px);
 
-        @include mq(sm) {
-          margin-left: 6%;
+        @include mq('sm') {
+          margin-left: percentage(18px / 320px);
         }
       }
 
       a {
-        font-size: 1.2rem;
+        text-decoration: none;
+        @include font-en();
+        font-size: 1.1rem;
         color: $color-font-base;
+        transition: 0.2s $ease-out-quart 0s;
 
-        @include mq(sm) {
-          font-size: 1.8rem;
+        &:hover {
+          color: lighten($color-font-base, 40%);
+        }
+
+        @include mq('sm') {
+          font-size: 1rem;
         }
       }
     }

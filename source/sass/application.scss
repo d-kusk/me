@@ -5,8 +5,9 @@
 @import "foundation/_variables";
 @import "foundation/_font";
 @import "foundation/_base";
-
+@import "_placeholder";
 @import "_mixin";
 
 @import "object/components/*";
-@import "object/project/*";
+@import "object/layouts/*";
+// @import "object/projects/*";
