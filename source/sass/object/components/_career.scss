@@ -1,0 +1,23 @@
+.c-career {
+  margin-top: $base-margin;
+  @extend %list-reset;
+
+  &__item {
+    & + & {
+      margin-top: $base-margin - 10px;
+    }
+
+    time,
+    span {
+      @include font-en;
+    }
+
+    time {
+      font-weight: 600;
+    }
+
+    span {
+      color: $color-font-grey;
+    }
+  }
+}

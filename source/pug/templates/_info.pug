@@ -2,25 +2,39 @@
   .c-info
     .c-info__fig
       .c-img
-        img(src=`${image_path}profile.jpg`, alt="")
+        img(src=`${image_path}img-profile.jpg`, alt="")
     .c-info__contents
       header.c-info__contents__header
         h1.c-ttl.c-ttl--en #{title}
-        p.c-ttl.c-ttl--jp.c-ttl--sub マークアップエンジニア
+        p.c-ttl.c-ttl--sub Webエンジニア
       .c-info__contents__body
-        p.c-lead
-          | 京都出身、京都在住のマークアップエンジニア。<br>
-          | 業務ではマークアップは勿論、JavaScriptやPHP、WordPressなどを用いてサイトの実装を行っています。<br>
-          | プライベートでPythonやDockerなどサーバーサイドの勉強もしています。
-      footer.c-info__contents__footer
-        .c-links
-          ul.c-links__list
-            li.c-links__list__item
-              a(href="#", target="_blank")
-                i.fa.fa-twitter
-            li.c-links__list__item
-              a(href="#", target="_blank")
-                i.fa.fa-github
-            li.c-links__list__item
-              a(href="#", target="_blank")
-                i.fa.fa-pencil
+        .c-sec.c-sec--profile
+          p.c-lead
+            | '93年生まれ、京都出身、京都在住。
+          p.c-lead
+            | よりよいマークアップと長く運用できるCSS設計をするのが得意です。<br>
+            | Python(Django)やJavaScriptを使ったシステム開発やDockerやPaaSを用いた開発に興味があります。
+          p.c-lead
+            | プライベートで、WordBench京都を始め幾つかのコミュニティで活動しています。
+        .c-sec.c-sec--social
+          .c-links
+            ul.c-links__list
+              li.c-links__list__item
+                a(href="https://twitter.com/skd_nw", target="_blank") Twitter
+              li.c-links__list__item
+                a(href="https://github.com/d-kusk", target="_blank") Github
+              li.c-links__list__item
+                a(href="https://blog.daisukekonishi.com", target="_blank") Blog
+              li.c-links__list__item
+                a(href="https://speakerdeck.com/dkonishi", target="_blank") SpeakerDeck
+        .c-sec.c-sec--career
+          ul.c-career
+            li.c-career__item
+              time 2017.10<br>
+              span coroutine inc. - Web Engineer
+            li.c-career__item
+              time 2016.04 - 2017.10<br>
+              span FICC inc. Kyoto - Markup Engineer
+            li.c-career__item
+              time 2014.10 - 2014.11<br>
+              span CLUB ENER inc. - Internship(Designer &amp; Markup Engineer)
