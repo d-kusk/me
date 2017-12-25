@@ -1,0 +1,57 @@
+.c-hero {
+  width: 100%;
+  height: 100%;
+  @extend %gradient;
+
+  @include mq(md) {
+    height: 95%;
+  }
+
+  @include mq(sm) {
+    height: 85%;
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .c-container {
+    height: 100%;
+  }
+
+  &__title,
+  &__desc {
+    @include font-en;
+    color: #ffffff;
+  }
+
+  &__title {
+    font-size: 2.6rem;
+
+    @include mq(sm) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__desc {
+    font-size: 1.2rem;
+
+    @include mq(sm) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.c-hero-title__group {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  &__inner {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+}

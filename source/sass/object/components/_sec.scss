@@ -1,7 +1,27 @@
 .c-sec {
+  padding: 100px 0;
+
+  @include mq(md) {
+    padding: 60px 0;
+  }
+
   & + & {
     margin-top: $base-margin;
   }
+
+  &--bg-accent {
+    background: rgba(41,171,226,1);
+    background: linear-gradient(45deg,
+                              rgba(41,171,226,1) 0%,
+                              rgba(25,129,214,1) 100%);
+  }
+
+  &__header {}
+
+  &__body {
+    margin-top: $base-margin;
+  }
+
   .c-lead + .c-lead {
     margin-top: 0.8em;
   }

@@ -1,0 +1,26 @@
+.c-work-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mq(sm) {
+    display: block;
+  }
+
+  &__item {
+    width: 31%;
+    background-color: #ffffff;
+
+    @include mq(sm) {
+      width: 100%;
+    }
+
+    & + & {
+      margin-left: 2.5%;
+
+      @include mq(sm) {
+        margin-left: 0;
+        margin-top: 8%;
+      }
+    }
+  }
+}
