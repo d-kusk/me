@@ -1,7 +1,7 @@
 .c-ttl {
   margin: 0;
   font-size: 24px;
-  color: $color-font-base;
+  color: $color-primary;
 
   &--sub {
     font-size: 16px;
@@ -14,5 +14,13 @@
 
   &--en {
     @include font-en;
+  }
+
+  &--white {
+    color: #ffffff;
+  }
+
+  &--centered {
+    text-align: center;
   }
 }

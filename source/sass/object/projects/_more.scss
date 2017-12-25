@@ -1,0 +1,19 @@
+.p-more {
+
+  &__body {
+    .c-links__list {
+      text-align: center;
+    }
+
+    @include mq(sm) {
+      .c-links__list__item {
+        display: block;
+
+        & + .c-links__list__item {
+          margin-top: 1rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

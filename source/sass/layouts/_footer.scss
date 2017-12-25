@@ -1,6 +1,6 @@
 .l-global-footer {
   width: 100%;
-  background-color: $color-primary;
+  @extend %gradient;
   margin-top: $base-margin * 2;
   padding: 1em 0 4em;
 
