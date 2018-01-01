@@ -1,8 +1,3 @@
-import sample from './_sample';
+import scroll from './_scroll'
 
-sample();
-
-let newFunc = (val) => {
-  console.log(val)
-}
-newFunc('piyo');
+scroll()
