@@ -21,10 +21,17 @@
     height: 100%;
   }
 
-  &__title,
-  &__desc {
+  &__text {
     @include font-en;
     color: #ffffff;
+    opacity: 0;
+    transition: 0.3s $ease-out-quart 0s;
+    transform: translate3d(-15px, 0, 0);
+
+    &.isShow {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   &__title {

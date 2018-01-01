@@ -1,3 +1,7 @@
 import scroll from './_scroll'
+import Hero from './_hero'
 
-scroll()
+$(function() {
+  scroll()
+  new Hero()
+})
