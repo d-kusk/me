@@ -1,8 +1,7 @@
-import sample from './_sample';
+import scroll from './_scroll'
+import Hero from './_hero'
 
-sample();
-
-let newFunc = (val) => {
-  console.log(val)
-}
-newFunc('piyo');
+$(function() {
+  scroll()
+  new Hero()
+})

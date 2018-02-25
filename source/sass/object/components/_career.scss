@@ -1,6 +1,10 @@
 .c-career {
-  margin-top: $base-margin;
   @extend %list-reset;
+  margin: 0;
+
+  @include mq(md) {
+    margin-top: $base-margin;
+  }
 
   &__item {
     & + & {
