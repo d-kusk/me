@@ -18,11 +18,11 @@ const Top = () => {
           <Portfolio />
         </Container>
       </Section>
-      <Section>
+      {/* <Section>
         <Container>
           <Blog />
         </Container>
-      </Section>
+      </Section> */}
       <FooterSection />
     </div>
   )

@@ -7,6 +7,8 @@ import { Text } from './style/Text'
 
 const PortfolioArea = styled.div`
   max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
 
   .header {
     text-align: center;
