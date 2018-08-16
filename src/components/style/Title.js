@@ -9,7 +9,7 @@ const MainTitle = styled.h1`
 const SubTitle = styled.h2`
   margin-bottom: 0;
   font-size: 1.3rem;
-  color: #29abe2;
+  color: ${props => (props.primary ? '#29abe2' : 'inherit')};
 `
 
 const SubSubTitle = styled.h3`

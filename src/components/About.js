@@ -90,7 +90,7 @@ class About extends Component {
         </div>
         <div className="content">
           <AboutHeader>
-            <SubTitle>{config.title}</SubTitle>
+            <SubTitle primary>{config.title}</SubTitle>
             <SubSubTitle>Web Enginner</SubSubTitle>
           </AboutHeader>
           <Text>'93年生まれ、京都出身、大阪在住。</Text>
@@ -106,8 +106,6 @@ class About extends Component {
 
           <HistoryList>
             {this.state.histories.map((history, index) => {
-              console.log(index, history)
-
               return (
                 <HistoryListItem key={index}>
                   <History

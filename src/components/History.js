@@ -24,8 +24,6 @@ const HistoryWrapper = styled.div`
 `
 
 const History = props => {
-  console.log(props)
-
   return (
     <HistoryWrapper>
       <p className="period">{`${props.startYear} - ${props.endYear}`}</p>
