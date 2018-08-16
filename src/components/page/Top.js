@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Section, Container } from '../style/layout'
 import { About } from '../About'
-import { BlogSection } from '../Blog'
+import { BlogSection as Blog } from '../Blog'
+import { PortfolioSection as Portfolio } from '../Portfolio'
 import { FooterSection } from '../../layouts/Footer'
 
 const Top = () => {
@@ -12,9 +13,14 @@ const Top = () => {
           <About />
         </Container>
       </Section>
-      <Section secondary>
+      <Section primary>
         <Container>
-          <BlogSection />
+          <Portfolio />
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Blog />
         </Container>
       </Section>
       <FooterSection />

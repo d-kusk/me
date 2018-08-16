@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const Section = styled.section`
-  background-color: ${props => (props.secondary ? '#ededed' : '#fff')}
-  padding-top: 40px;
-  padding-bottom: 40px;
+  background-color: ${props => (props.primary ? '#29abe2' : '#fff')};
+  padding-top: 100px;
+  padding-bottom: 100px;
 `
 
 const Container = styled.div`
@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Footer = styled.footer`
   background-color: #29abe2;
-  padding: 40px 0 60px;
+  padding: 30px 0 60px;
 `
 
 export { Section, Container, Footer }

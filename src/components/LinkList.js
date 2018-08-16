@@ -5,18 +5,18 @@ const LinkListWrapper = styled.ul`
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 0;
-  text-align: center;
+  text-align: left;
 `
 
 const LinkListItem = styled.li`
   display: inline-block;
 
   & + & {
-    margin-left: 1.6em;
+    margin-left: 1em;
   }
 
   a {
-    color: #fff;
+    color: #7b7b7b;
   }
 `
 
@@ -43,10 +43,6 @@ class LinkList extends Component {
         {
           label: 'Github',
           url: 'https://github.com/d-kusk'
-        },
-        {
-          label: 'Blog',
-          url: 'https://blog.daisukekonishi.com'
         },
         {
           label: 'SpeakerDeck',

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import config from '../config'
 import Image from './Image'
 import History from './History'
+import { LinkList } from './LinkList'
 import { SubTitle, SubSubTitle } from './style/Title'
 import { Text } from './style/Text'
 import profileImage from '../static/image/img-profile.jpg'
@@ -103,6 +104,7 @@ class About extends Component {
             プライベートではKansai WordPress
             Meetupをはじめ、色々活動しています。
           </Text>
+          <LinkList />
 
           <HistoryList>
             {this.state.histories.map((history, index) => {

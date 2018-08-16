@@ -143,7 +143,7 @@ class BlogSection extends Component {
         </div>
         <div className="footer">
           <Button href="https://blog.daisukekonishi.com" blank>
-            More
+            View More
           </Button>
         </div>
       </BlogArea>

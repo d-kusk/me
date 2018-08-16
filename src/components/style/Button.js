@@ -8,7 +8,6 @@ const ButtonStyle = styled.div`
     padding: 6px 40px;
     background-color: #29abe2;
     transition: 0.2s ease-out 0s;
-    border-radius: 10px;
     color: #fff;
 
     &:hover {
