@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import RSSParser from 'rss-parser'
+import RSSParser from 'rss-parser/dist/rss-parser.min.js';
 import { Button } from './style/Button'
 import { SubTitle } from './style/Title'
 import DateUtility from '../utility/Date'

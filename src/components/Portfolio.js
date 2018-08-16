@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Image from './Image'
+// import Image from './Image'
 import { SubTitle, SubSubTitle } from './style/Title'
 import { Text } from './style/Text'
-import config from '../config'
+// import config from '../config'
 
 const PortfolioArea = styled.div`
   max-width: 1024px;

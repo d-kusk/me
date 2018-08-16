@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Section, Container } from '../style/layout'
 import { About } from '../About'
 import { BlogSection as Blog } from '../Blog'
