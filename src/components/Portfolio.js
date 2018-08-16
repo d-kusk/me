@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-// import Image from './Image'
 import { SubTitle, SubSubTitle } from './style/Title'
 import { Text } from './style/Text'
-// import config from '../config'
+
+import hugoGentooTheme from '../static/image/img-hugo-gentoo-theme.png'
+import hugoMinimage from '../static/image/img-hugo-minimage.png'
+import mealselect from '../static/image/img-mealselect.png'
 
 const PortfolioArea = styled.div`
   max-width: 1024px;
@@ -48,13 +50,16 @@ const PortfolioCard = styled.div`
   }
 
   .image {
-    width: 24%;
+    width: 36%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
 
   .content {
     align-items: center;
-    width: 100%; /* 76%; */
-    padding: 2em 2.4em;
+    width: 64%;
+    padding: 2.6em 2.4em;
   }
 `
 
@@ -63,9 +68,8 @@ const Portfolio = props => {
   return (
     <PortfolioCard>
       <a href={model.link}>
-        {/* <div class="image">
-          <Image src={`/static/media/${model.file}`} alt={''} />
-        </div> */}
+        <div className="image" style={{backgroundImage: `url(${model.file})`}}>
+        </div>
         <div className="content">
           <SubSubTitle>{model.title}</SubSubTitle>
           <Text>{model.description}</Text>
@@ -86,21 +90,21 @@ class PortfolioSection extends Component {
           description:
             'Hugoのテンプレートテーマです。JSON-LDやGoogle Analyticsのコード生成ができるのが特徴です。',
           link: 'https://github.com/d-kusk/hugo-gentoo-theme',
-          file: 'img-hugo-gentoo-theme.png'
+          file: hugoGentooTheme
         },
         {
           title: 'minimage',
           description:
             'Hugoのテンプレートテーマ。サムネイルやグローバルナビなどの設定ができるのが特徴です。',
           link: 'https://github.com/d-kusk/minimage',
-          file: 'img-hugo-minimage.png'
+          file: hugoMinimage
         },
         {
           title: 'MealSelect',
           description:
             '「今日のごはんどうしよう」を考える手助けをしてくれるレコメンドアプリ。設計から実装まで行いました。',
           link: 'https://mealselect.daisukekonishi.com',
-          file: 'img-mealselect.png'
+          file: mealselect
         }
       ]
     }
