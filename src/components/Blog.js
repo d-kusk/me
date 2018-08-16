@@ -29,11 +29,19 @@ const BlogList = styled.ul`
 `
 
 const BlogItem = styled.li`
-  width: 33%;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 33%;
+  }
   padding: 1% 2%;
 
   & + & {
-    border-left: 2px solid #d5d5d5;
+    border-top: 2px solid #d5d5d5;
+    @media (min-width: 768px) {
+      border-top: none;
+      border-left: 2px solid #d5d5d5;
+    }
   }
   a {
     text-decoration: none;

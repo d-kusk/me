@@ -50,16 +50,31 @@ const PortfolioCard = styled.div`
   }
 
   .image {
-    width: 36%;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-top: 60%;
+    }
+
+    @media (min-width: 768px) {
+      width: 36%;
+    }
   }
 
   .content {
+    width: 100%;
     align-items: center;
-    width: 64%;
-    padding: 2.6em 2.4em;
+    padding: 1em;
+
+    @media (min-width: 768px) {
+      width: 64%;
+      padding: 2.6em 2.4em;
+    }
   }
 `
 
