@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import config from '../config'
 import styled from 'styled-components'
-import RSSParser from 'rss-parser/dist/rss-parser.min.js';
+import RSSParser from 'rss-parser'
 import { Button } from './style/Button'
 import { SubTitle } from './style/Title'
 import DateUtility from '../utility/Date'
@@ -67,7 +68,8 @@ const Blog = props => {
 
 class BlogSection extends Component {
   constructor(props) {
-    super(props)
+    super(props)    
+    this.parser = new RSSParser()
 
     this.state = {
       articles: [
@@ -98,10 +100,9 @@ class BlogSection extends Component {
     // https://www.npmjs.com/package/rss-parser
     const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
     const RSS_URL = 'https://blog.daisukekonishi.com/index.xml'
-    const parser = new RSSParser()
     let articles = []
     const numberOfArticles = 3
-    parser.parseURL(`${CORS_PROXY}${RSS_URL}`, (error, feed) => {
+    this.parser.parseURL(`${CORS_PROXY}${RSS_URL}`, (error, feed) => {
       if (error) {
         console.warn(error)
       }
@@ -142,7 +143,7 @@ class BlogSection extends Component {
           )}
         </div>
         <div className="footer">
-          <Button href="https://blog.daisukekonishi.com" blank>
+          <Button href={config.BASE_URL} blank>
             View More
           </Button>
         </div>
