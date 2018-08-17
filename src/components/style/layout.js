@@ -2,8 +2,13 @@ import styled from 'styled-components'
 
 const Section = styled.section`
   background-color: ${props => (props.primary ? '#29abe2' : '#fff')};
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (min-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 `
 
 const Container = styled.div`
