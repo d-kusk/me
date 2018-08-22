@@ -4,23 +4,15 @@ import { BlogAction } from '../action/BlogAction'
 import { Button } from './style/Button'
 import { SubTitle } from './style/Title'
 import { Text } from './style/Text'
-// import DateUtility from '../utility/Date'
+import Image from './Image'
+import {
+  SeparateSection,
+  SeparateHead,
+  SeparateContent
+} from '../layouts/SeparateSection'
+import blogImage from '../static/image/img-blog.png'
 
-const BlogArea = styled.div`
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-
-  header h2,
-  header p {
-    text-align: center;
-  }
-
-  .body,
-  .footer {
-    margin-top: 2rem;
-  }
-`
+const BlogArea = styled.div``
 
 // const BlogList = styled.ul`
 //   list-style-type: none;
@@ -104,9 +96,9 @@ class BlogSection extends Component {
     // this.fetchRSS()
   }
 
-  fetchRSS() {
-    BlogAction.fetchArticle(this)
-  }
+  // fetchRSS() {
+  //   BlogAction.fetchArticle(this)
+  // }
 
   // updateArticle(feed) {
   //   let articles = []
@@ -131,10 +123,22 @@ class BlogSection extends Component {
   render() {
     return (
       <BlogArea>
-        <header>
-          <SubTitle>Blog</SubTitle>
-          <Text>仕事やプライベートで知ったことを備忘録として残しています</Text>
-        </header>
+        <SeparateSection>
+          <SeparateHead>
+            <header>
+              <SubTitle>Blog</SubTitle>
+            </header>
+            <Text>
+              仕事やプライベートで知ったことを備忘録として残しています。
+            </Text>
+            <Button href={'https://blog.daisukekonishi.com'} blank>
+              Blogへ移動する
+            </Button>
+          </SeparateHead>
+          <SeparateContent>
+            <Image src={blogImage} alt="PengNoteのスクリーンショット" />
+          </SeparateContent>
+        </SeparateSection>
         {/* <div className="body">
           {this.state.articles.length > 0 ? (
             <BlogList>
@@ -144,11 +148,6 @@ class BlogSection extends Component {
             </BlogList>
           ) : null}
         </div> */}
-        <div className="footer">
-          <Button href={'https://blog.daisukekonishi.com'} blank>
-            View
-          </Button>
-        </div>
       </BlogArea>
     )
   }

@@ -162,13 +162,6 @@ class PortfolioSection extends Component {
             </WorksList>
           </SeparateContent>
         </SeparateSection>
-        {/* <header className="header">
-          <SubTitle>Portfolio</SubTitle>
-          <Text></Text>
-        </header> */}
-        {/* <div className="body">
-          
-        </div> */}
       </PortfolioArea>
     )
   }
