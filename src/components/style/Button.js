@@ -19,7 +19,7 @@ const ButtonStyle = styled.div`
 
 const Button = props => {
   return (
-    <ButtonStyle>
+    <ButtonStyle className="button">
       <a href={props.href} target={props.blank ? '_blank' : 'self'}>
         {props.children}
       </a>

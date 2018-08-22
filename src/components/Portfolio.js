@@ -2,15 +2,21 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { SubTitle, SubSubTitle } from './style/Title'
 import { Text } from './style/Text'
+import { Button } from './style/Button'
+import {
+  SeparateSection,
+  SeparateHead,
+  SeparateContent
+} from '../layouts/SeparateSection'
 
 import hugoGentooTheme from '../static/image/img-hugo-gentoo-theme.png'
 import hugoMinimage from '../static/image/img-hugo-minimage.png'
 import mealselect from '../static/image/img-mealselect.png'
 
 const PortfolioArea = styled.div`
-  max-width: 1024px;
+  /* max-width: 1024px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: auto; */
 
   .header {
     text-align: center;
@@ -45,7 +51,7 @@ const PortfolioCard = styled.div`
 
     &:hover {
       transform: translate3d(0, -3px, 0);
-      box-shadow: 0px 18px 10px #0c82b4;
+      box-shadow: 0px 8px 10px #d5d5d5;
     }
   }
 
@@ -83,8 +89,10 @@ const Portfolio = props => {
   return (
     <PortfolioCard>
       <a href={model.link}>
-        <div className="image" style={{backgroundImage: `url(${model.file})`}}>
-        </div>
+        <div
+          className="image"
+          style={{ backgroundImage: `url(${model.file})` }}
+        />
         <div className="content">
           <SubSubTitle>{model.title}</SubSubTitle>
           <Text>{model.description}</Text>
@@ -103,7 +111,7 @@ class PortfolioSection extends Component {
         {
           title: 'hugo-gentoo-theme',
           description:
-            'Hugoのテンプレートテーマです。JSON-LDやGoogle Analyticsのコード生成ができるのが特徴です。',
+            'Hugoのテンプレートテーマです。初めて公式テーマリポジトリに申請したテーマで、JSON-LDやGoogle Analyticsのコード生成ができるのが特徴です。ジェンツーペンギンのカラーリングを参考に作成しました。',
           link: 'https://github.com/d-kusk/hugo-gentoo-theme',
           file: hugoGentooTheme
         },
@@ -117,7 +125,7 @@ class PortfolioSection extends Component {
         {
           title: 'MealSelect',
           description:
-            '「今日のごはんどうしよう」を考える手助けをしてくれるレコメンドアプリ。設計から実装まで行いました。',
+            '「今日のごはんどうしよう」を考える際の手助けをしてくれるレコメンドアプリ。フロントエンドとサーバーサイドを設計から実装まで行いました。',
           link: 'https://mealselect.daisukekonishi.com',
           file: mealselect
         }
@@ -128,21 +136,39 @@ class PortfolioSection extends Component {
   render() {
     return (
       <PortfolioArea>
-        <header className="header">
+        <SeparateSection>
+          <SeparateHead>
+            <header>
+              <SubTitle>Portfolio</SubTitle>
+            </header>
+            <Text>
+              これまで自主的に制作したものの一部です。
+              <br />
+              プライベートで勉強しながら技術に触れ、制作したものをGithubで公開しています。
+            </Text>
+            <Button href={'https://github.com/d-kusk'} blank>
+              Github
+            </Button>
+          </SeparateHead>
+          <SeparateContent>
+            <WorksList>
+              {this.state.portfolios.map((portfolio, index) => {
+                return (
+                  <WorksListItem key={index}>
+                    <Portfolio model={portfolio} />
+                  </WorksListItem>
+                )
+              })}
+            </WorksList>
+          </SeparateContent>
+        </SeparateSection>
+        {/* <header className="header">
           <SubTitle>Portfolio</SubTitle>
-          <Text>これまで自主的に制作したものです</Text>
-        </header>
-        <div className="body">
-          <WorksList>
-            {this.state.portfolios.map((portfolio, index) => {
-              return (
-                <WorksListItem key={index}>
-                  <Portfolio model={portfolio} />
-                </WorksListItem>
-              )
-            })}
-          </WorksList>
-        </div>
+          <Text></Text>
+        </header> */}
+        {/* <div className="body">
+          
+        </div> */}
       </PortfolioArea>
     )
   }
