@@ -3,13 +3,23 @@ import styled from 'styled-components'
 const SeparateSection = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  flex-direction: row;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const SeparateHead = styled.div`
   width: 40%;
   box-sizing: border-box;
   padding: 4%;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    padding: 2%;
+  }
 
   header {
     margin-bottom: 1em;
@@ -33,6 +43,11 @@ const SeparateHead = styled.div`
 
 const SeparateContent = styled.div`
   width: 60%;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    padding: 2%;
+  }
 `
 
 export { SeparateSection, SeparateHead, SeparateContent }
