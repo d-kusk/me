@@ -3,22 +3,21 @@ import styled from 'styled-components'
 const SeparateSection = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
 
-  @media (min-width: 768px) {
-    flex-direction: column;
+  @media (min-width: 769px) {
+    flex-direction: row;
     align-items: center;
   }
 `
 
 const SeparateHead = styled.div`
-  width: 40%;
+  width: 100%;
   box-sizing: border-box;
   padding: 4%;
 
-  @media (min-width: 768px) {
-    width: 100%;
-    padding: 2%;
+  @media (min-width: 769px) {
+    width: 40%;
   }
 
   header {
@@ -42,10 +41,10 @@ const SeparateHead = styled.div`
 `
 
 const SeparateContent = styled.div`
-  width: 60%;
+  width: 100%;
 
-  @media (min-width: 768px) {
-    width: 100%;
+  @media (min-width: 769px) {
+    width: 60%;
     padding: 2%;
   }
 `
