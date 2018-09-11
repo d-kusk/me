@@ -14,58 +14,55 @@ import blogImage from '../static/image/img-blog.png'
 
 const BlogArea = styled.div``
 
-// const BlogList = styled.ul`
-//   list-style-type: none;
-//   padding-left: 0;
-//   display: flex;
-//   flex-wrap: wrap;
-// `
+const BlogList = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+`
 
-// const BlogItem = styled.li`
-//   width: 100%;
+const BlogItem = styled.li`
+  width: 100%;
 
-//   @media (min-width: 768px) {
-//     width: 33%;
-//   }
-//   padding: 1% 2%;
+  @media (min-width: 768px) {
+    width: 33%;
+  }
+  padding: 1% 2%;
 
-//   & + & {
-//     border-top: 2px solid #d5d5d5;
-//     @media (min-width: 768px) {
-//       border-top: none;
-//       border-left: 2px solid #d5d5d5;
-//     }
-//   }
-//   a {
-//     text-decoration: none;
-//   }
+  & + & {
+    border-top: 2px solid #d5d5d5;
+    @media (min-width: 768px) {
+      border-top: none;
+      border-left: 2px solid #d5d5d5;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
 
-//   .title {
-//     line-height: 1.6em;
-//     margin-bottom: 0;
-//     font-size: 1rem;
-//     color: #29abe2;
-//   }
+  .title {
+    line-height: 1.6em;
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #29abe2;
+  }
 
-//   .pubtime {
-//     font-size: 0.8rem;
-//     color: #7b7b7b;
-//   }
-// `
+  .pubtime {
+    font-size: 0.8rem;
+    color: #7b7b7b;
+  }
+`
 
-// const Blog = props => {
-//   const blog = props.blog
-//   return (
-//     <BlogItem>
-//       <a href={blog.link} target="_blank">
-//         <p className="title">{blog.title}</p>
-//         <p className="pubtime">
-//           <time>{blog.time}</time>
-//         </p>
-//       </a>
-//     </BlogItem>
-//   )
-// }
+const Blog = props => {
+  const blog = props.blog
+  return (
+    <BlogItem>
+      <a href={blog.link} target="_blank">
+        <p className="title">{blog.title}</p>
+      </a>
+    </BlogItem>
+  )
+}
 
 class BlogSection extends Component {
   constructor(props) {
@@ -93,32 +90,26 @@ class BlogSection extends Component {
   }
 
   componentDidMount() {
-    // this.fetchRSS()
+    BlogAction.fetchArticle(this)
   }
 
-  // fetchRSS() {
-  //   BlogAction.fetchArticle(this)
-  // }
+  updateArticle(res) {
+    if (res.query && res.query.results.item.length > 0) {
+      const latestArticle = []
+      const numberOfArticles = 3
+      const articles = res.query.results.item.splice(0, numberOfArticles)
 
-  // updateArticle(feed) {
-  //   let articles = []
-  //   const numberOfArticles = 3
-  //   for (const index in feed) {
-  //     let feedItem = {}
-  //     feedItem.title = feed[index].title
-  //     feedItem.link = feed[index].link
-  //     feedItem.time = DateUtility.formatToPubdate(feed[index].pubDate)
-  //     articles.push(feedItem)
-
-  //     if (articles.length >= numberOfArticles) {
-  //       break
-  //     }
-  //   }
-
-  //   this.setState({
-  //     articles: articles
-  //   })
-  // }
+      articles.forEach(article => {
+        const item = {}
+        item.title = article.title
+        item.link = article.link
+        latestArticle.push(item)
+      })
+      this.setState({
+        articles: latestArticle
+      })
+    }
+  }
 
   render() {
     return (
@@ -139,7 +130,7 @@ class BlogSection extends Component {
             <Image src={blogImage} alt="PengNoteのスクリーンショット" />
           </SeparateContent>
         </SeparateSection>
-        {/* <div className="body">
+        <div className="body">
           {this.state.articles.length > 0 ? (
             <BlogList>
               {this.state.articles.map((blog, index) => {
@@ -147,7 +138,7 @@ class BlogSection extends Component {
               })}
             </BlogList>
           ) : null}
-        </div> */}
+        </div>
       </BlogArea>
     )
   }
