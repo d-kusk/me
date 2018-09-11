@@ -4,68 +4,84 @@ import { BlogAction } from '../action/BlogAction'
 import { Button } from './style/Button'
 import { SubTitle } from './style/Title'
 import { Text } from './style/Text'
-import Image from './Image'
 import {
   SeparateSection,
   SeparateHead,
   SeparateContent
 } from '../layouts/SeparateSection'
-import blogImage from '../static/image/img-blog.png'
 
 const BlogArea = styled.div``
 
-// const BlogList = styled.ul`
-//   list-style-type: none;
-//   padding-left: 0;
-//   display: flex;
-//   flex-wrap: wrap;
-// `
+const BlogList = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+`
 
-// const BlogItem = styled.li`
-//   width: 100%;
+const BlogItem = styled.li`
+  width: 100%;
+  min-height: 140px;
+  border: 1px solid #f1f1f1;
+  transition: 0.2s ease-out 0s;
 
-//   @media (min-width: 768px) {
-//     width: 33%;
-//   }
-//   padding: 1% 2%;
+  &:hover {
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0px 8px 10px #d5d5d5;
+  }
 
-//   & + & {
-//     border-top: 2px solid #d5d5d5;
-//     @media (min-width: 768px) {
-//       border-top: none;
-//       border-left: 2px solid #d5d5d5;
-//     }
-//   }
-//   a {
-//     text-decoration: none;
-//   }
+  @media (min-width: 768px) {
+    width: 32%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-//   .title {
-//     line-height: 1.6em;
-//     margin-bottom: 0;
-//     font-size: 1rem;
-//     color: #29abe2;
-//   }
+  & + & {
+    margin-left: 1%;
 
-//   .pubtime {
-//     font-size: 0.8rem;
-//     color: #7b7b7b;
-//   }
-// `
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+  }
+  > div {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  a {
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 0 5%;
+  }
 
-// const Blog = props => {
-//   const blog = props.blog
-//   return (
-//     <BlogItem>
-//       <a href={blog.link} target="_blank">
-//         <p className="title">{blog.title}</p>
-//         <p className="pubtime">
-//           <time>{blog.time}</time>
-//         </p>
-//       </a>
-//     </BlogItem>
-//   )
-// }
+  .title {
+    display: block;
+    line-height: 1.6em;
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #7b7b7b;
+  }
+
+  .pubtime {
+    font-size: 0.8rem;
+    color: #7b7b7b;
+  }
+`
+
+const Blog = props => {
+  const blog = props.blog
+  return (
+    <BlogItem>
+      <div>
+        <a href={blog.link} target="_blank" rel="noopener">
+          <span className="title">{blog.title}</span>
+          <time className="pubtime">{blog.pubDate}</time>
+        </a>
+      </div>
+    </BlogItem>
+  )
+}
 
 class BlogSection extends Component {
   constructor(props) {
@@ -76,49 +92,52 @@ class BlogSection extends Component {
         // {
         //   title: 'Test Title',
         //   link: 'Link',
-        //   time: 'Sun, 12 Aug 2018 00:28:57 +0900'
+        //   pubDate: 'Sun, 12 Aug 2018 00:28:57 +0900'
         // },
         // {
         //   title: 'Test Title',
         //   link: 'Link',
-        //   time: 'Sun, 12 Aug 2018 00:28:57 +0900'
+        //   pubDate: 'Sun, 12 Aug 2018 00:28:57 +0900'
         // },
         // {
         //   title: 'Test Title',
         //   link: 'Link',
-        //   time: 'Sun, 12 Aug 2018 00:28:57 +0900'
+        //   pubDate: 'Sun, 12 Aug 2018 00:28:57 +0900'
         // }
       ]
     }
   }
 
   componentDidMount() {
-    // this.fetchRSS()
+    BlogAction.fetchArticle(this)
   }
 
-  // fetchRSS() {
-  //   BlogAction.fetchArticle(this)
-  // }
+  updateArticle(res) {
+    if (res.query && res.query.results.item.length > 0) {
+      const latestArticle = []
+      const numberOfArticles = 3
+      const articles = res.query.results.item.splice(0, numberOfArticles)
 
-  // updateArticle(feed) {
-  //   let articles = []
-  //   const numberOfArticles = 3
-  //   for (const index in feed) {
-  //     let feedItem = {}
-  //     feedItem.title = feed[index].title
-  //     feedItem.link = feed[index].link
-  //     feedItem.time = DateUtility.formatToPubdate(feed[index].pubDate)
-  //     articles.push(feedItem)
+      articles.forEach(article => {
+        const item = {}
+        item.title = article.title
+        item.link = article.link
+        item.pubDate = this.formatDate(article.pubDate)
+        latestArticle.push(item)
+      })
+      this.setState({
+        articles: latestArticle
+      })
+    }
+  }
 
-  //     if (articles.length >= numberOfArticles) {
-  //       break
-  //     }
-  //   }
-
-  //   this.setState({
-  //     articles: articles
-  //   })
-  // }
+  formatDate(date) {
+    const Day = new Date(date)
+    const year = Day.getFullYear()
+    const month = Day.getMonth()
+    const day = Day.getDate()
+    return `${year}.${month}.${day}`
+  }
 
   render() {
     return (
@@ -136,18 +155,17 @@ class BlogSection extends Component {
             </Button>
           </SeparateHead>
           <SeparateContent>
-            <Image src={blogImage} alt="PengNoteのスクリーンショット" />
+            <div className="body">
+              {this.state.articles.length > 0 ? (
+                <BlogList>
+                  {this.state.articles.map((blog, index) => {
+                    return <Blog key={index} blog={blog} />
+                  })}
+                </BlogList>
+              ) : null}
+            </div>
           </SeparateContent>
         </SeparateSection>
-        {/* <div className="body">
-          {this.state.articles.length > 0 ? (
-            <BlogList>
-              {this.state.articles.map((blog, index) => {
-                return <Blog key={index} blog={blog} />
-              })}
-            </BlogList>
-          ) : null}
-        </div> */}
       </BlogArea>
     )
   }
