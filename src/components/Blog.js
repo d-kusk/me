@@ -74,7 +74,7 @@ const Blog = props => {
   return (
     <BlogItem>
       <div>
-        <a href={blog.link} target="_blank">
+        <a href={blog.link} target="_blank" rel="noopener">
           <span className="title">{blog.title}</span>
           <time className="pubtime">{blog.pubDate}</time>
         </a>
