@@ -23,7 +23,7 @@ const LinkListItem = styled.li`
 const Link = props => {
   return (
     <LinkListItem>
-      <a href={props.url} target="_blank">
+      <a href={props.url} target="_blank" rel="noopener">
         {props.label}
       </a>
     </LinkListItem>
