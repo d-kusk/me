@@ -1,9 +1,9 @@
 import React from 'react'
-import { Section, Container } from '../style/layout'
-import { About } from '../About'
-import { BlogSection as Blog } from '../Blog'
-import { PortfolioSection as Portfolio } from '../Portfolio'
-import { FooterSection } from '../../layouts/Footer'
+import { Section, Container } from '../components/style/layout'
+import { About } from '../components/About'
+import { BlogSection as Blog } from '../components/Blog'
+import { PortfolioSection as Portfolio } from '../components/Portfolio'
+import { FooterSection } from '../layouts/Footer'
 
 const Top = () => {
   return (
