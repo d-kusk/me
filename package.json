@@ -6,7 +6,8 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.1",
     "styled-components": "^3.4.2",
     "xml2json": "^0.11.2"
   },
@@ -19,7 +20,6 @@
     "lint:fix": "eslint --fix src/*.js"
   },
   "devDependencies": {
-    "eslint": "^5.3.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -28,5 +28,11 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "prettier": "^1.14.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
