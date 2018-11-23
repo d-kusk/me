@@ -1,56 +1,152 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+
 import { SubTitle, SubSubTitle } from '../components/style/Title'
 import { Text } from '../components/style/Text'
 import { Button } from '../components/style/Button'
-import {
-  SeparateSection,
-  SeparateHead,
-  SeparateContent
-} from '../layouts/SeparateSection'
 
 import hugoGentooTheme from '../static/image/img-hugo-gentoo-theme.png'
 import hugoMinimage from '../static/image/img-hugo-minimage.png'
 import mealselect from '../static/image/img-mealselect.png'
 
+const portfolios = [
+  {
+    title: 'MealSelect',
+    description:
+      '「今日のごはんどうしよう」を考える時に助けてくれるWebアプリ。',
+    link: 'https://mealselect.daisukekonishi.com',
+    file: mealselect,
+    tags: ['React', 'Django']
+  },
+  {
+    title: 'minimage',
+    description:
+      'Hugoのテンプレートテーマ。サムネイルやグローバルナビなどの設定ができるのが特徴です。',
+    link: 'https://github.com/d-kusk/minimage',
+    file: hugoMinimage,
+    tags: ['Hugo']
+  },
+  {
+    title: 'hugo-gentoo-theme',
+    description:
+      'Hugoのテンプレートテーマです。初めて公式テーマリポジトリに申請したテーマで、JSON-LDやGoogle Analyticsのコード生成ができるのが特徴です。',
+    link: 'https://github.com/d-kusk/hugo-gentoo-theme',
+    file: hugoGentooTheme,
+    tags: ['Hugo']
+  }
+]
+
+const Portfolio = () => {
+  return (
+    <PortfolioArea>
+      <div className="header">
+        <SubTitle>Portfolio</SubTitle>
+        <Text>個人的に制作したものの一部です。</Text>
+        <Button href={'https://github.com/d-kusk'} blank>
+          Githubへ
+        </Button>
+      </div>
+
+      <div className="body">
+        <WorksList>
+          {portfolios.map((portfolio, index) => {
+            return (
+              <WorksListItem key={index}>
+                <PortfolioItem model={portfolio} />
+              </WorksListItem>
+            )
+          })}
+        </WorksList>
+      </div>
+    </PortfolioArea>
+  )
+}
+
+const PortfolioItem = props => {
+  const model = props.model
+  return (
+    <PortfolioCard>
+      <div
+        className="image"
+        style={{ backgroundImage: `url(${model.file})` }}
+      />
+      <div className="content">
+        <div className="content-header">
+          <SubSubTitle>{model.title}</SubSubTitle>
+          <Tags>
+            {model.tags.map((tag, index) => {
+              return (
+                <div className="tag" key={index}>
+                  {tag}
+                </div>
+              )
+            })}
+          </Tags>
+        </div>
+        <div className="content-body">
+          <Text>{model.description}</Text>
+        </div>
+        <footer className="content-footer">
+          <Button href={model.link} blank>
+            more
+          </Button>
+        </footer>
+      </div>
+    </PortfolioCard>
+  )
+}
+
+export { Portfolio }
+
 const PortfolioArea = styled.div`
   .header {
     text-align: center;
+
+    h2 {
+      font-size: 3em;
+    }
   }
 
   .body {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     margin-top: 2rem;
+
+    @media (min-width: 768px) {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 `
 
 const WorksList = styled.ul`
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   list-style-type: none;
   padding-left: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const WorksListItem = styled.li`
-  & + & {
-    margin-top: 10px;
+  display: flex;
+  width: 30%;
+  margin: 1%;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+
+  @media (max-width: 768px) {
+    width: 96%;
+    margin: 1% 2%;
   }
 `
 
 const PortfolioCard = styled.div`
-  a {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #fff;
-    text-decoration: none;
-    transition: 0.2s ease-out 0s;
-
-    &:hover {
-      transform: translate3d(0, -3px, 0);
-      box-shadow: 0px 8px 10px #d5d5d5;
-    }
-  }
-
+  position: relative;
   .image {
     width: 100%;
     background-repeat: no-repeat;
@@ -62,105 +158,57 @@ const PortfolioCard = styled.div`
       display: block;
       padding-top: 60%;
     }
-
-    @media (min-width: 768px) {
-      width: 36%;
-    }
   }
 
   .content {
     width: 100%;
     align-items: center;
-    padding: 1em;
+    padding: 1em 1em 50px;
+  }
 
-    @media (min-width: 768px) {
-      width: 64%;
-      padding: 2.6em 2.4em;
+  .content-header {
+    h3 {
+      margin-bottom: 0;
+    }
+    & + * {
+      margin-top: 0.6em;
+    }
+  }
+
+  .content-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 2%;
+
+    > div {
+      display: inline-block;
     }
   }
 `
 
-const PortfolioItem = props => {
-  const model = props.model
-  return (
-    <PortfolioCard>
-      <a href={model.link}>
-        <div
-          className="image"
-          style={{ backgroundImage: `url(${model.file})` }}
-        />
-        <div className="content">
-          <SubSubTitle>{model.title}</SubSubTitle>
-          <Text>{model.description}</Text>
-        </div>
-      </a>
-    </PortfolioCard>
-  )
-}
+const Tags = styled.div`
+  .tag,
+  &::before {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-class Portfolio extends Component {
-  constructor(props) {
-    super(props)
+  .tag {
+    font-size: 0.9em;
+    color: #7b7b7b;
 
-    this.state = {
-      portfolios: [
-        {
-          title: 'hugo-gentoo-theme',
-          description:
-            'Hugoのテンプレートテーマです。初めて公式テーマリポジトリに申請したテーマで、JSON-LDやGoogle Analyticsのコード生成ができるのが特徴です。ジェンツーペンギンのカラーリングを参考に作成しました。',
-          link: 'https://github.com/d-kusk/hugo-gentoo-theme',
-          file: hugoGentooTheme
-        },
-        {
-          title: 'minimage',
-          description:
-            'Hugoのテンプレートテーマ。サムネイルやグローバルナビなどの設定ができるのが特徴です。',
-          link: 'https://github.com/d-kusk/minimage',
-          file: hugoMinimage
-        },
-        {
-          title: 'MealSelect',
-          description:
-            '「今日のごはんどうしよう」を考える際の手助けをしてくれるレコメンドアプリ。フロントエンドとサーバーサイドを設計から実装まで行いました。',
-          link: 'https://mealselect.daisukekonishi.com',
-          file: mealselect
-        }
-      ]
+    &::before {
+      content: '#';
+    }
+
+    & + .tag {
+      margin-left: 0.5em;
     }
   }
-
-  render() {
-    return (
-      <PortfolioArea>
-        <SeparateSection>
-          <SeparateHead>
-            <header>
-              <SubTitle>Portfolio</SubTitle>
-            </header>
-            <Text>
-              これまで自主的に制作したものの一部です。
-              <br />
-              プライベートで勉強しながら技術に触れ、制作したものをGithubで公開しています。
-            </Text>
-            <Button href={'https://github.com/d-kusk'} blank>
-              Github
-            </Button>
-          </SeparateHead>
-          <SeparateContent>
-            <WorksList>
-              {this.state.portfolios.map((portfolio, index) => {
-                return (
-                  <WorksListItem key={index}>
-                    <PortfolioItem model={portfolio} />
-                  </WorksListItem>
-                )
-              })}
-            </WorksList>
-          </SeparateContent>
-        </SeparateSection>
-      </PortfolioArea>
-    )
-  }
-}
-
-export { Portfolio }
+`
