@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import config from '../config'
-import Image from './Image'
-import History from './History'
-import { LinkList } from './LinkList'
-import { SubTitle, SubSubTitle } from './style/Title'
-import { Text } from './style/Text'
+import Image from '../components/Image'
+import History from '../components/History'
+import { LinkList } from '../components/LinkList'
+import { SubTitle, SubSubTitle } from '../components/style/Title'
+import { Text } from '../components/style/Text'
 import profileImage from '../static/image/img-profile.jpg'
 
 const AboutWrapper = styled.div`

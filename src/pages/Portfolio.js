@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { SubTitle, SubSubTitle } from './style/Title'
-import { Text } from './style/Text'
-import { Button } from './style/Button'
+import { SubTitle, SubSubTitle } from '../components/style/Title'
+import { Text } from '../components/style/Text'
+import { Button } from '../components/style/Button'
 import {
   SeparateSection,
   SeparateHead,
@@ -14,10 +14,6 @@ import hugoMinimage from '../static/image/img-hugo-minimage.png'
 import mealselect from '../static/image/img-mealselect.png'
 
 const PortfolioArea = styled.div`
-  /* max-width: 1024px;
-  margin-right: auto;
-  margin-left: auto; */
-
   .header {
     text-align: center;
   }
@@ -84,7 +80,7 @@ const PortfolioCard = styled.div`
   }
 `
 
-const Portfolio = props => {
+const PortfolioItem = props => {
   const model = props.model
   return (
     <PortfolioCard>
@@ -102,7 +98,7 @@ const Portfolio = props => {
   )
 }
 
-class PortfolioSection extends Component {
+class Portfolio extends Component {
   constructor(props) {
     super(props)
 
@@ -155,7 +151,7 @@ class PortfolioSection extends Component {
               {this.state.portfolios.map((portfolio, index) => {
                 return (
                   <WorksListItem key={index}>
-                    <Portfolio model={portfolio} />
+                    <PortfolioItem model={portfolio} />
                   </WorksListItem>
                 )
               })}
@@ -167,4 +163,4 @@ class PortfolioSection extends Component {
   }
 }
 
-export { PortfolioSection }
+export { Portfolio }
