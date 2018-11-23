@@ -1,15 +1,13 @@
 import React from 'react'
-import { Footer, Container } from '../components/style/layout'
+import { FooterContainer, Container } from '../components/style/layout'
 import { Copy } from '../components/Copy'
 
-const FooterSection = () => {
+export const Footer = () => {
   return (
-    <Footer>
+    <FooterContainer>
       <Container>
         <Copy />
       </Container>
-    </Footer>
+    </FooterContainer>
   )
 }
-
-export { FooterSection }

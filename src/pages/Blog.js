@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { BlogAction } from '../action/BlogAction'
-import { Button } from './style/Button'
-import { SubTitle } from './style/Title'
-import { Text } from './style/Text'
+import { Button } from '../components/style/Button'
+import { SubTitle } from '../components/style/Title'
+import { Text } from '../components/style/Text'
 import {
   SeparateSection,
   SeparateHead,
@@ -19,7 +19,7 @@ const BlogList = styled.ul`
   flex-wrap: wrap;
 `
 
-const BlogItem = styled.li`
+const BlogItemStyle = styled.li`
   width: 100%;
   min-height: 140px;
   border: 1px solid #f1f1f1;
@@ -69,42 +69,26 @@ const BlogItem = styled.li`
   }
 `
 
-const Blog = props => {
+const BlogItem = props => {
   const blog = props.blog
   return (
-    <BlogItem>
+    <BlogItemStyle>
       <div>
-        <a href={blog.link} target="_blank" rel="noopener">
+        <a href={blog.link} target="_blank" rel="noopener noreferrer">
           <span className="title">{blog.title}</span>
           <time className="pubtime">{blog.pubDate}</time>
         </a>
       </div>
-    </BlogItem>
+    </BlogItemStyle>
   )
 }
 
-class BlogSection extends Component {
+class Blog extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      articles: [
-        // {
-        //   title: 'Test Title',
-        //   link: 'Link',
-        //   pubDate: 'Sun, 12 Aug 2018 00:28:57 +0900'
-        // },
-        // {
-        //   title: 'Test Title',
-        //   link: 'Link',
-        //   pubDate: 'Sun, 12 Aug 2018 00:28:57 +0900'
-        // },
-        // {
-        //   title: 'Test Title',
-        //   link: 'Link',
-        //   pubDate: 'Sun, 12 Aug 2018 00:28:57 +0900'
-        // }
-      ]
+      articles: []
     }
   }
 
@@ -151,7 +135,7 @@ class BlogSection extends Component {
               仕事やプライベートで知ったことを備忘録として残しています。
             </Text>
             <Button href={'https://blog.daisukekonishi.com'} blank>
-              Blogへ移動する
+              Blogへ
             </Button>
           </SeparateHead>
           <SeparateContent>
@@ -159,7 +143,7 @@ class BlogSection extends Component {
               {this.state.articles.length > 0 ? (
                 <BlogList>
                   {this.state.articles.map((blog, index) => {
-                    return <Blog key={index} blog={blog} />
+                    return <BlogItem key={index} blog={blog} />
                   })}
                 </BlogList>
               ) : null}
@@ -171,4 +155,4 @@ class BlogSection extends Component {
   }
 }
 
-export { BlogSection }
+export { Blog }
