@@ -25,6 +25,10 @@ const GlobalNavContainer = styled.div`
     font-size: 18px;
     color: #255255;
 
+    @media (max-width: 768px) {
+      margin: 0 3%;
+    }
+
     &:hover {
       text-decoration: none;
       color: #8c8c8c;

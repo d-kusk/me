@@ -135,7 +135,7 @@ class Blog extends Component {
               仕事やプライベートで知ったことを備忘録として残しています。
             </Text>
             <Button href={'https://blog.daisukekonishi.com'} blank>
-              Blogへ移動する
+              Blogへ
             </Button>
           </SeparateHead>
           <SeparateContent>
