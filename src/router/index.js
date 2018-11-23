@@ -11,11 +11,7 @@ const Router = () => {
     <Switch>
       <Route path="/blog" render={props => <Layout content={<Blog />} />} />
       <Route path="/about" render={props => <Layout content={<About />} />} />
-      <Route
-        exact
-        path="/"
-        render={props => <Layout content={<Portfolio />} />}
-      />
+      <Route path="/" render={props => <Layout content={<Portfolio />} />} />
     </Switch>
   )
 }
