@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import config from '../config'
-import Image from './Image'
-import History from './History'
-import { LinkList } from './LinkList'
-import { SubTitle, SubSubTitle } from './style/Title'
-import { Text } from './style/Text'
+import Image from '../components/Image'
+import History from '../components/History'
+import { LinkList } from '../components/LinkList'
+import { SubTitle, SubSubTitle } from '../components/style/Title'
+import { Text } from '../components/style/Text'
 import profileImage from '../static/image/img-profile.jpg'
 
 const AboutWrapper = styled.div`
@@ -94,14 +94,14 @@ class About extends Component {
             <SubTitle primary>{config.title}</SubTitle>
             <SubSubTitle>Web Enginner</SubSubTitle>
           </AboutHeader>
-          <Text>'93年生まれ、京都出身、大阪在住。</Text>
+          <Text>1993年生まれ、京都出身で大阪在住。</Text>
           <Text>
-            マークアップからWebのシステム開発までやっています。
+            Webフロントエンドの実装をすることが多いですが、サーバーサイドの実装もやっています。
             <br />
-            コンポーネントを意識した実装を心がけています。
+            Webシステムの開発に興味があり、勉強がてら色々触って作っています。
           </Text>
           <Text>
-            プライベートではKansai WordPress
+            また、プライベートではKansai WordPress
             Meetupをはじめ、色々活動しています。
           </Text>
           <LinkList />

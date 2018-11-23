@@ -21,9 +21,9 @@ const Container = styled.div`
   }
 `
 
-const Footer = styled.footer`
+const FooterContainer = styled.footer`
   background-color: #29abe2;
   padding: 30px 0 60px;
 `
 
-export { Section, Container, Footer }
+export { Section, Container, FooterContainer }
