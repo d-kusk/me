@@ -36,15 +36,12 @@ const portfolios = [
   }
 ]
 
-const Portfolio = () => {
+const Portfolio = props => {
   return (
     <PortfolioArea>
       <div className="header">
-        <SubTitle>Portfolio</SubTitle>
+        <SubTitle>Works</SubTitle>
         <Text>個人的に制作したものの一部です。</Text>
-        <Button href={'https://github.com/d-kusk'} blank>
-          Githubへ
-        </Button>
       </div>
 
       <div className="body">
@@ -58,6 +55,11 @@ const Portfolio = () => {
           })}
         </WorksList>
       </div>
+      <div className="footer">
+        <Button href={'https://github.com/d-kusk'} blank>
+          Githubへ
+        </Button>
+      </div>
     </PortfolioArea>
   )
 }
@@ -66,32 +68,29 @@ const PortfolioItem = props => {
   const model = props.model
   return (
     <PortfolioCard>
-      <div
-        className="image"
-        style={{ backgroundImage: `url(${model.file})` }}
-      />
-      <div className="content">
-        <div className="content-header">
-          <SubSubTitle>{model.title}</SubSubTitle>
-          <Tags>
-            {model.tags.map((tag, index) => {
-              return (
-                <div className="tag" key={index}>
-                  {tag}
-                </div>
-              )
-            })}
-          </Tags>
+      <a href={model.link} target={'_blank'} rel="noopener noreferrer">
+        <div
+          className="image"
+          style={{ backgroundImage: `url(${model.file})` }}
+        />
+        <div className="content">
+          <div className="content-header">
+            <SubSubTitle>{model.title}</SubSubTitle>
+            <Tags>
+              {model.tags.map((tag, index) => {
+                return (
+                  <div className="tag" key={index}>
+                    {tag}
+                  </div>
+                )
+              })}
+            </Tags>
+          </div>
+          <div className="content-body">
+            <Text>{model.description}</Text>
+          </div>
         </div>
-        <div className="content-body">
-          <Text>{model.description}</Text>
-        </div>
-        <footer className="content-footer">
-          <Button href={model.link} blank>
-            more
-          </Button>
-        </footer>
-      </div>
+      </a>
     </PortfolioCard>
   )
 }
@@ -134,19 +133,29 @@ const WorksList = styled.ul`
 
 const WorksListItem = styled.li`
   display: flex;
-  width: 30%;
-  margin: 1%;
+  width: 28%;
+  margin: 2%;
   border: 1px solid #d6d6d6;
   border-radius: 3px;
 
   @media (max-width: 768px) {
     width: 96%;
-    margin: 1% 2%;
+    margin: 4% 2%;
   }
 `
 
 const PortfolioCard = styled.div`
   position: relative;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+  a {
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   .image {
     width: 100%;
     background-repeat: no-repeat;
@@ -163,7 +172,11 @@ const PortfolioCard = styled.div`
   .content {
     width: 100%;
     align-items: center;
-    padding: 1em 1em 50px;
+    padding: 1em;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .content-header {
@@ -172,22 +185,6 @@ const PortfolioCard = styled.div`
     }
     & + * {
       margin-top: 0.6em;
-    }
-  }
-
-  .content-footer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 0 2%;
-
-    > div {
-      display: inline-block;
     }
   }
 `

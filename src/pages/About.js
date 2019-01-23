@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+
 import config from '../config'
 import Image from '../components/Image'
-import History from '../components/History'
 import { LinkList } from '../components/LinkList'
 import { SubTitle, SubSubTitle } from '../components/style/Title'
 import { Text } from '../components/style/Text'
+
 import profileImage from '../static/image/img-profile.jpg'
 
 const AboutWrapper = styled.div`
@@ -40,90 +41,37 @@ const AboutHeader = styled.header`
   margin-bottom: 1.2rem;
 `
 
-const HistoryList = styled.ul`
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 2rem;
-`
-
-const HistoryListItem = styled.li`
-  & + & {
-    margin-top: 1rem;
-  }
-`
-
-class About extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      histories: [
-        {
-          startYear: '2017.10',
-          endYear: '',
-          company: 'coroutine inc.',
-          position: 'Web Enginner'
-        },
-        {
-          startYear: '2016.04',
-          endYear: '2017.10',
-          company: 'FICC inc. Kyoto',
-          position: 'Markup Engineer'
-        },
-        {
-          startYear: '2014.10',
-          endYear: '2014.11',
-          company: 'CLUB ENER inc.',
-          position: 'Designer & Markup (Internship)'
-        }
-      ]
-    }
-  }
-
-  render() {
-    return (
-      <AboutWrapper>
-        <div className="image">
-          <Image
-            src={`${profileImage}`}
-            alt={`${config.title}のプロフィール画像`}
-          />
-        </div>
-        <div className="content">
-          <AboutHeader>
-            <SubTitle primary>{config.title}</SubTitle>
-            <SubSubTitle>Web Enginner</SubSubTitle>
-          </AboutHeader>
-          <Text>1993年生まれ、京都出身で大阪在住。</Text>
-          <Text>
-            Webフロントエンドの実装をすることが多いですが、サーバーサイドの実装もやっています。
-            <br />
-            Webシステムの開発に興味があり、勉強がてら色々触って作っています。
-          </Text>
-          <Text>
-            また、プライベートではKansai WordPress
-            Meetupをはじめ、色々活動しています。
-          </Text>
-          <LinkList />
-
-          <HistoryList>
-            {this.state.histories.map((history, index) => {
-              return (
-                <HistoryListItem key={index}>
-                  <History
-                    startYear={history.startYear}
-                    endYear={history.endYear}
-                    company={history.company}
-                    position={history.position}
-                  />
-                </HistoryListItem>
-              )
-            })}
-          </HistoryList>
-        </div>
-      </AboutWrapper>
-    )
-  }
+const About = () => {
+  return (
+    <AboutWrapper>
+      <div className="image">
+        <Image
+          src={`${profileImage}`}
+          alt={`${config.title}のプロフィール画像`}
+        />
+      </div>
+      <div className="content">
+        <AboutHeader>
+          <SubTitle primary>{config.title}</SubTitle>
+          <SubSubTitle>Web Enginner</SubSubTitle>
+        </AboutHeader>
+        <Text>1993年生まれ、京都出身で大阪在住。</Text>
+        <Text>
+          中学生の頃、チャットで色んな人と喋ることにハマったのをきっかけにWebに興味をもつ。
+          新卒で入社した会社で大手企業サイトのマークアップからCMSの組み込み、軽度なディレクションを経験した後、今のシステム系の会社へ。
+        </Text>
+        <Text>
+          今は主にWebのフロントエンドの開発をしていますが、最近はサーバーサイドの実装を勉強中です。
+        </Text>
+        <Text>Webシステムやサービスの開発、美味しいお酒に興味があります。</Text>
+        <Text>
+          プライベートではKansai WordPress
+          Meetupをはじめ、いくつかのコミュニティに出入りしています。
+        </Text>
+        <LinkList />
+      </div>
+    </AboutWrapper>
+  )
 }
 
 export { About }
