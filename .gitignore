@@ -34,3 +34,7 @@ www/
 
 
 safety-update.config.json
+
+# netlify functions
+.netlify
+.functions
