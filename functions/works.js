@@ -1,10 +1,11 @@
 import Airtable from 'airtable'
-// import 'dotenv.config'
-
-const base = new Airtable({ apiKey: 'AIRTABLE_API_KEY' }).base('APP_ID')
+import dotenv from 'dotenv'
 
 const getWorks = () => {
   return new Promise((resolve, reject) => {
+    const { AIRTABLE_API_KEY, APP_ID } = process.env
+    const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(APP_ID)
+
     const works = base('works').select({
       view: 'Grid view'
     })
