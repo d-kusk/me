@@ -10,12 +10,11 @@
     "node-fetch": "^2.3.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.5",
     "styled-components": "^4.1.3"
   },
   "scripts": {
-    "react": "run-p start:**",
+    "start": "run-p start:**",
     "start:react": "react-scripts start",
     "start:function": "netlify-lambda serve functions",
     "build": "run-p build:**",
