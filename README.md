@@ -1,3 +1,3 @@
 # me
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a75d6eaa-69ba-4120-aee9-dab2a5aa7975/deploy-status)](https://app.netlify.com/sites/researcher-architecture-57165/deploys)[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a75d6eaa-69ba-4120-aee9-dab2a5aa7975/deploy-status)](https://app.netlify.com/sites/researcher-architecture-57165/deploys)[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Greenkeeper badge](https://badges.greenkeeper.io/d-kusk/me.svg)](https://greenkeeper.io/)
