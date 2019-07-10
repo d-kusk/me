@@ -8,8 +8,17 @@ import { WorksList } from '../components/WorksList'
 import hugoGentooTheme from '../static/image/img-hugo-gentoo-theme.png'
 import hugoMinimage from '../static/image/img-hugo-minimage.png'
 import mealselect from '../static/image/img-mealselect.png'
+import MemoDrip from '../static/image/img-memodrip.png'
 
 const portfolios = [
+  {
+    title: 'MemoDrip',
+    description:
+      '飲んだコーヒーをメモするWebアプリ。Djangoで認証の利用やGCPに初挑戦。',
+    link: 'https://mealselect.daisukekonishi.com',
+    file: MemoDrip,
+    tags: ['Django']
+  },
   {
     title: 'MealSelect',
     description:
@@ -21,7 +30,7 @@ const portfolios = [
   {
     title: 'minimage',
     description:
-      'Hugoのテンプレートテーマ。サムネイルやグローバルナビなどの設定ができるのが特徴です。',
+      'Hugoのテンプレートテーマ。サムネイルやグローバルナビなどの設定ができるのが特徴。',
     link: 'https://github.com/d-kusk/minimage',
     file: hugoMinimage,
     tags: ['Hugo']
@@ -29,7 +38,7 @@ const portfolios = [
   {
     title: 'hugo-gentoo-theme',
     description:
-      'Hugoのテンプレートテーマです。初めて公式テーマリポジトリに申請したテーマで、JSON-LDやGoogle Analyticsのコード生成ができるのが特徴です。',
+      'Hugoのテンプレートテーマ。初めて公式テーマリポジトリに申請したテーマで、JSON-LDやGoogle Analyticsのコード生成ができるのが特徴。',
     link: 'https://github.com/d-kusk/hugo-gentoo-theme',
     file: hugoGentooTheme,
     tags: ['Hugo']

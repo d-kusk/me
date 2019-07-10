@@ -35,6 +35,12 @@ export const WorkItem = ({ model }) => (
 const Card = styled.div`
   position: relative;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease-out 0s;
+
+  &:hover {
+    box-shadow: 0 1px 6px 8px rgba(0, 0, 0, 0.14),
+      0 7px 9px 5px rgba(0, 0, 0, 0.2);
+  }
 
   a {
     display: block;

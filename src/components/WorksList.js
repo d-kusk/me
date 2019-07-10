@@ -17,6 +17,7 @@ export const WorksList = ({ works }) => (
 
 const List = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -30,7 +31,7 @@ const List = styled.ul`
 
 const Item = styled.li`
   display: flex;
-  width: 28%;
+  width: 46%;
   margin: 2%;
   border: 1px solid #d6d6d6;
   border-radius: 3px;
