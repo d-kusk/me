@@ -4,10 +4,9 @@
   "private": true,
   "homepage": "https://daisukekonishi.com/",
   "dependencies": {
-    "airtable": "^0.5.10",
+    "airtable-node": "^0.1.20",
     "dotenv": "^6.2.0",
     "netlify-lambda": "^1.4.13",
-    "node-fetch": "^2.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^2.1.8",
