@@ -15,7 +15,7 @@ const portfolios = [
     title: 'MemoDrip',
     description:
       '飲んだコーヒーをメモするWebアプリ。Djangoで認証の利用やGCPに初挑戦。',
-    link: 'https://mealselect.daisukekonishi.com',
+    link: 'https://www.memodrip.net',
     file: MemoDrip,
     tags: ['Django']
   },
